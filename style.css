@@ -30,7 +30,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   /* background-position: center center; */
-  min-height: calc(100vh - 67.59px);
+  min-height: calc(100vh - 64px);
 }
 
 hr {
@@ -133,4 +133,24 @@ hr {
 #footer i:hover,
 #footer i:active {
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  #showcase .title {
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+  .lead {
+    font-size: 1rem !important;
+  }
+
+  .details p {
+    color: #343a40;
+  }
+}
+#contact h3 {
+  font-size: 2.8rem;
+  font-weight: 300;
+  line-height: 0.75;
 }
