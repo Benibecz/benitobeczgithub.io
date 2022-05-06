@@ -1,20 +1,21 @@
 "use strict";
 const contacto = document.querySelector("#contact");
-const detail = document.querySelector(".details");
-const detail2 = document.querySelector(".details2");
+const detail = document
+  .querySelector("#contact")
+  .getElementsByClassName("details");
 
 function mouseOver() {
-  detail.style.backgroundColor = "#6c757d";
-  detail.style.color = "#fff";
-  detail2.style.backgroundColor = "#6c757d";
-  detail2.style.color = "#fff";
+  detail[0].style.backgroundColor = "#6c757d";
+  detail[0].style.color = "#fff";
+  detail[1].style.backgroundColor = "#6c757d";
+  detail[1].style.color = "#fff";
 }
 
 function mouseOut() {
-  detail.style.backgroundColor = "#fff";
-  detail.style.color = "#343a40";
-  detail2.style.backgroundColor = "#fff";
-  detail2.style.color = "#343a40";
+  detail[0].style.backgroundColor = "#fff";
+  detail[0].style.color = "#343a40";
+  detail[1].style.backgroundColor = "#fff";
+  detail[1].style.color = "#343a40";
 }
 
 contacto.addEventListener("mouseover", mouseOver);

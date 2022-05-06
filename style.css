@@ -40,12 +40,31 @@ hr {
   margin: 6.5rem auto !important;
 }
 
+h2 {
+  /* color: #6c757d; */
+  color: #343a40;
+  font-size: 2.5rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* #contact p:nth-child(odd) {
+  color: #343a40;
+  font-size: 1.1rem;
+  font-weight: 600;
+} */
+
 .centered {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.mb-6 {
+  margin-bottom: 4rem;
 }
 
 /****  SHOWCASE ****/
@@ -67,17 +86,17 @@ hr {
   margin-bottom: 5rem;
 }
 
-.introduction {
+/* .introduction {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} */
 
-.introduction h2 {
+/* .introduction h2 {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-}
+} */
 
 .photo {
   padding: 0 !important;
@@ -136,6 +155,18 @@ hr {
 }
 
 @media (max-width: 768px) {
+  .meetTheDev p:last-child {
+    margin-bottom: 2rem;
+  }
+
+  .meetTheDev h2 {
+    text-align: center;
+  }
+
+  .cardsDec img {
+    width: 100%;
+    height: auto;
+  }
   #showcase .title {
     font-size: 4.5rem;
     font-weight: 300;
