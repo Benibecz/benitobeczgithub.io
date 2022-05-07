@@ -125,7 +125,7 @@ h2 {
 }
 
 .details p {
-  color: #fff;
+  color: #343a40;
 }
 
 /* .details:hover,
@@ -153,6 +153,8 @@ h2 {
 #footer i:active {
   color: #fff;
 }
+
+/* **** RESPONSIVE **** */
 
 @media (max-width: 768px) {
   .meetTheDev p:last-child {
