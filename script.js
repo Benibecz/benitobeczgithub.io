@@ -1,5 +1,5 @@
 "use strict";
-const contacto = document.querySelector("#contact, #projects");
+const contacto = document.querySelector("#contact");
 const getInTouch = document.querySelector("#contact h2");
 
 function colorChange(e) {
