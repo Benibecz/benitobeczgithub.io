@@ -1,13 +1,34 @@
 "use strict";
 const contacto = document.querySelector("#contact");
 const getInTouch = document.querySelector("#contact h2");
+const meetDevBtn = document.querySelector(".meetDev--Btn");
+const meetDevSection = document.querySelector("#meetTheDeveloper");
+const myProjects = document.querySelector(".my--projects");
+const projectsSection = document.querySelector("#projects");
+
+const smoothScrolling = function () {
+  const projectsCoords = projectsSection.getBoundingClientRect();
+  console.log(projectsCoords.top);
+  console.log(window.pageYOffset);
+
+  window.scrollTo({
+    left: projectsCoords.left + window.pageXOffset,
+    top: projectsCoords.top + window.pageYOffset,
+    behavior: "smooth",
+  });
+};
+
+myProjects.addEventListener("click", smoothScrolling);
+
+// -- Modern way of doing smooth scrolling
+// meetDevBtn.addEventListener("click", () =>
+//   meetDevSection.scrollIntoView({ behavior: "smooth" })
+// );
 
 function colorChange(e) {
   getInTouch.style.color = `rgb(${e.offsetX}, ${e.offsetY}, 10)`;
   // detail[1].style.color = `rgb(${e.offsetX}, ${e.offsetY}, 40)`;
 }
-
-console.log(colorChange);
 
 document.body.addEventListener("mousemove", colorChange);
 

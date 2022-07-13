@@ -23,7 +23,10 @@ backgroundGray: #ffffff;
   height: 100vh;
   justify-content: center; 
 } */
-
+/* html,
+body {
+  scroll-behavior: smooth;
+} */
 header {
   background-image: url(img/bg8.jpeg);
   position: relative;
