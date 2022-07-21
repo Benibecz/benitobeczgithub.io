@@ -52,6 +52,9 @@ h2 {
   line-height: 1.2 !important;
   font-family: "Montserrat", sans-serif;
 }
+a {
+  color: white;
+}
 
 /* #contact p:nth-child(odd) {
   color: #343a40;

@@ -5,6 +5,7 @@ const getInTouch = document.querySelector("#contact h2");
 const meetDevBtn = document.querySelector(".meetDev--Btn");
 const meetDevSection = document.querySelector("#meetTheDeveloper");
 const navLinks = document.querySelector(".navbar-nav");
+const nav = document.querySelector(".navbar");
 
 const smoothScrolling = function (e) {
   // const projectsCoords = projectsSection.getBoundingClientRect();
@@ -15,8 +16,22 @@ const smoothScrolling = function (e) {
   // });
   e.preventDefault();
   if (e.target.classList.contains("nav-link")) {
-    const id = document.querySelector(e.target.getAttribute("href"));
-    id.scrollIntoView({ behavior: "smooth" });
+    const idSection = document.querySelector(e.target.getAttribute("href"));
+    idSection.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
+const fadeNavLinks = function (e) {
+  if (e.target.classList.contains("nav-link")) {
+    const clicked = e.target;
+    const links = e.target
+      .closest(".navbar")
+      .querySelectorAll(".nav-link, .navbar-brand");
+    links.forEach((link) => {
+      if (link !== clicked) {
+        link.style.opacity = this;
+      }
+    });
   }
 };
 const colorChange = function (e) {
@@ -26,3 +41,5 @@ const colorChange = function (e) {
 //Event Listeners
 document.body.addEventListener("mousemove", colorChange);
 navLinks.addEventListener("click", smoothScrolling);
+nav.addEventListener("mouseover", fadeNavLinks.bind(0.25));
+nav.addEventListener("mouseout", fadeNavLinks.bind(1));
