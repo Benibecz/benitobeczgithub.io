@@ -6,6 +6,27 @@ const meetDevBtn = document.querySelector(".meetDev--Btn");
 const meetDevSection = document.querySelector("#meetTheDeveloper");
 const navLinks = document.querySelector(".navbar-nav");
 const nav = document.querySelector(".navbar");
+const allSection = document.querySelectorAll("section");
+
+// -- Section Fade in
+const fadeIn = (entries, observer) => {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+  console.log(entry.target);
+  entry.target.classList.remove("section__hidden");
+  observer.unobserve(entry.target);
+};
+const fadeInObserver = new IntersectionObserver(fadeIn, {
+  root: null,
+  threshold: 0.13,
+});
+
+allSection.forEach((section) => {
+  section.classList.add("section__hidden");
+  fadeInObserver.observe(section);
+});
+
+// -- ^--^--^--^--^--^--^--^--
 
 const smoothScrolling = function (e) {
   // const projectsCoords = projectsSection.getBoundingClientRect();

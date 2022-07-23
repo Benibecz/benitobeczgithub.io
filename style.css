@@ -56,6 +56,15 @@ a {
   color: white;
 }
 
+.section__hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+section {
+  transition: transform 1.25s, opacity 1.25s;
+}
+
 /* #contact p:nth-child(odd) {
   color: #343a40;
   font-size: 1.1rem;
