@@ -65,11 +65,13 @@ section {
   transition: transform 1.25s, opacity 1.25s;
 }
 
-/* #contact p:nth-child(odd) {
-  color: #343a40;
-  font-size: 1.1rem;
-  font-weight: 600;
-} */
+img {
+  transition: all 1.35s;
+}
+
+.blur {
+  filter: blur(4px);
+}
 
 .centered {
   display: flex;

@@ -7,8 +7,28 @@ const meetDevSection = document.querySelector("#meetTheDeveloper");
 const navLinks = document.querySelector(".navbar-nav");
 const nav = document.querySelector(".navbar");
 const allSection = document.querySelectorAll("section");
+const allImgs = document.querySelectorAll("img");
+// ---------------------------------->> img lazy loading
 
-// -- Section Fade in
+const lazyLoadFunction = function (entries, observer) {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    entry.target.src = entry.target.dataset.src;
+    entry.target.classList.remove("blur");
+    observer.unobserve(entry.target);
+  });
+};
+
+const lazyLoadObserver = new IntersectionObserver(lazyLoadFunction, {
+  root: null,
+  threshold: 0.1,
+});
+allImgs.forEach((img) => {
+  img.classList.add("blur");
+  lazyLoadObserver.observe(img);
+});
+
+// ---------------------------------->> Section Fade in
 const fadeIn = (entries, observer) => {
   const [entry] = entries;
   if (!entry.isIntersecting) return;
@@ -26,7 +46,7 @@ allSection.forEach((section) => {
   fadeInObserver.observe(section);
 });
 
-// -- ^--^--^--^--^--^--^--^--
+// ---------------------------- //
 
 const smoothScrolling = function (e) {
   // const projectsCoords = projectsSection.getBoundingClientRect();
