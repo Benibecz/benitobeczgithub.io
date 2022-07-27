@@ -52,8 +52,20 @@ h2 {
   line-height: 1.2 !important;
   font-family: "Montserrat", sans-serif;
 }
-a {
+.logo {
   color: white;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
+}
+.logo h3 {
+  font-size: 1.5rem;
+  margin: auto;
+}
+
+.icon {
+  width: 2.25rem;
 }
 
 .section__hidden {
