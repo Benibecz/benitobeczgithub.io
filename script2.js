@@ -3,7 +3,7 @@
 // --------------- Section Selectors -------------------//
 
 const contacto = document.querySelector("#contact");
-const getInTouch = document.querySelector("#contact h2");
+const colors = document.querySelectorAll(".color");
 const meetDevSection = document.querySelector("#meetTheDeveloper");
 const navLinks = document.querySelector(".navbar-nav");
 const nav = document.querySelector(".navbar");
@@ -126,7 +126,9 @@ const fadeNavLinks = function (e) {
   }
 };
 const colorChange = function (e) {
-  getInTouch.style.color = `rgb(${e.offsetX}, ${e.offsetY}, 10)`;
+  colors.forEach(
+    (element) => (element.style.color = `rgb(${e.offsetX}, ${e.offsetY}, 5)`)
+  );
 };
 
 //Event Listeners

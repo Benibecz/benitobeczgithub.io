@@ -52,6 +52,7 @@ h2 {
   line-height: 1.2 !important;
   font-family: "Montserrat", sans-serif;
 }
+
 .logo {
   color: white;
   display: flex;
@@ -65,7 +66,8 @@ h2 {
 }
 
 .icon {
-  width: 2.25rem;
+  width: 2.5rem;
+  transition: none;
 }
 
 .section__hidden {
@@ -139,7 +141,7 @@ img {
 
 .card-img-top {
   /* width: 100%; */
-  /* height: auto; */
+
   object-fit: cover;
 }
 
@@ -246,6 +248,10 @@ img {
 
   .details p {
     color: #343a40;
+  }
+
+  .card-img-top {
+    height: auto;
   }
 
   .slider__track--container {
