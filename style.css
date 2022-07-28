@@ -132,7 +132,7 @@ img {
 
 .photo {
   padding: 0 !important;
-  margin: 0 auto;
+  margin: 2.5rem;
   object-fit: cover;
   border-radius: 0.25rem;
 }
@@ -235,6 +235,13 @@ img {
 
   .meetTheDev h2 {
     text-align: center;
+  }
+
+  .photo {
+    padding: 0 !important;
+    margin: auto;
+    object-fit: cover;
+    border-radius: 0.25rem;
   }
 
   #showcase .title {
