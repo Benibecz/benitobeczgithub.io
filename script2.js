@@ -88,7 +88,7 @@ const fadeIn = (entries, observer) => {
 };
 const fadeInObserver = new IntersectionObserver(fadeIn, {
   root: null,
-  threshold: 0.13,
+  threshold: 0.1,
 });
 
 allSection.forEach((section) => {
@@ -132,5 +132,5 @@ const colorChange = function (e) {
 //Event Listeners
 document.body.addEventListener("mousemove", colorChange);
 navLinks.addEventListener("click", smoothScrolling);
-nav.addEventListener("mouseover", fadeNavLinks.bind(0.25));
+nav.addEventListener("mouseover", fadeNavLinks.bind(0.2));
 nav.addEventListener("mouseout", fadeNavLinks.bind(1));
