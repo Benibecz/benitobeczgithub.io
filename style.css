@@ -67,7 +67,6 @@ h2 {
 
 .icon {
   width: 2.5rem;
-  transition: none;
 }
 
 .section__hidden {
@@ -80,7 +79,7 @@ section {
 }
 
 img {
-  transition: all 1s;
+  transition: filter 1s;
 }
 
 .blur {
@@ -140,8 +139,6 @@ img {
 /****  PROJECTS ****/
 
 .card-img-top {
-  /* width: 100%; */
-
   object-fit: cover;
 }
 
