@@ -17,10 +17,26 @@ const meetDevBtn = document.querySelector(".meetDev--Btn");
 const slideBtnLeft = document.querySelector(".slider__btn--left");
 const slideBtnRight = document.querySelector(".slider__btn--right");
 
+const dotsContainer = document.querySelector(".dots__container");
+
+const createDots = function () {
+  allSection.forEach(function (_, index) {
+    dotsContainer.insertAdjacentHTML(
+      "beforeend",
+      `<button class="dots__dot" data-slide="${index}"></button>`
+    );
+  });
+};
+
 // ---------------------------------->> Slider
 
 let currentSlide = 0;
 const totalSlides = allSlides.length - 1;
+
+const initializationFunction = function (currentSlide) {
+  createDots();
+  dotActive(currentSlide);
+};
 
 const sliderFuntion = function (slideNumber) {
   allSlides.forEach((slide, index) => {
@@ -38,25 +54,40 @@ const sliderMobileFunction = function () {
 };
 
 slideBtnRight.addEventListener("click", function () {
-  if (currentSlide === totalSlides) {
+  if (currentSlide >= totalSlides) {
     currentSlide = 0;
   } else {
     currentSlide++;
   }
+  dotActive(currentSlide);
   sliderFuntion(currentSlide);
 });
 
 slideBtnLeft.addEventListener("click", function () {
-  if (currentSlide === 0) {
+  if (currentSlide <= 0) {
     currentSlide = totalSlides;
   } else {
     currentSlide--;
   }
+  dotActive(currentSlide);
   sliderFuntion(currentSlide);
 });
 
 window.addEventListener("resize", sliderMobileFunction);
 window.addEventListener("load", sliderMobileFunction);
+
+// ---------------------------------->> Slider > dots
+const dotActive = function (currentSlide) {
+  const allDots = document.querySelectorAll(".dots__dot");
+
+  allDots.forEach((dot) => {
+    dot.classList.remove("dots__dot--active");
+    if (dot.dataset.slide === `${currentSlide}`) {
+      dot.classList.add("dots__dot--active");
+    }
+  });
+  sliderFuntion(currentSlide);
+};
 
 // ---------------------------------->> lazy loading img
 
@@ -131,8 +162,17 @@ const colorChange = function (e) {
   );
 };
 
+initializationFunction(currentSlide);
+
 //Event Listeners
 document.body.addEventListener("mousemove", colorChange);
 navLinks.addEventListener("click", smoothScrolling);
 nav.addEventListener("mouseover", fadeNavLinks.bind(0.2));
 nav.addEventListener("mouseout", fadeNavLinks.bind(1));
+// --> slider dots
+dotsContainer.addEventListener("click", function (e) {
+  if (!e.target.classList.contains("dots__dot")) return;
+  currentSlide = e.target.dataset.slide;
+  sliderFuntion(currentSlide);
+  dotActive(currentSlide);
+});

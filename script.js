@@ -8,6 +8,7 @@ const navLinks = document.querySelector(".navbar-nav");
 const nav = document.querySelector(".navbar");
 const allSection = document.querySelectorAll("section");
 const allImgs = document.querySelectorAll("img");
+
 // ---------------------------------->> img lazy loading
 
 const lazyLoadFunction = function (entries, observer) {
