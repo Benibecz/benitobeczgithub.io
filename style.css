@@ -71,11 +71,11 @@ h2 {
 
 .section__hidden {
   opacity: 0;
-  transform: translateY(8rem);
+  transform: translateY(7rem);
 }
 
 section {
-  transition: transform 1.25s, opacity 1.25s;
+  transition: transform 1s, opacity 1s;
 }
 
 img {

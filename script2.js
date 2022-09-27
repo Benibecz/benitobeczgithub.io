@@ -119,7 +119,7 @@ const fadeIn = (entries, observer) => {
 };
 const fadeInObserver = new IntersectionObserver(fadeIn, {
   root: null,
-  threshold: 0.1,
+  threshold: 0.09,
 });
 
 allSection.forEach((section) => {
